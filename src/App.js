@@ -28,12 +28,13 @@ const App = () => {
 				<button onClick={() => setAppRenderIndex(appRenderIndex + 1)}>
 					Re-Render App
 				</button>
-				<button onClick={() => setColor(color === 'red' ? 'blue' : 'red)}')}>
+				<button onClick={() => setColor(color === 'red' ? 'blue' : 'red')}>
 					Change Color
 				</button>
 			</div>
 			<div>
 				<MemoedSwatch color={color} />
+				<MemoedSwatch color={color === 'red' ? 'blue' : 'red'} />
 			</div>
 		</div>
 	);
