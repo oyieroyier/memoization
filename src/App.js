@@ -1,4 +1,4 @@
-import { useState, memo, useMemo } from 'react';
+import { useState, memo, useMemo, useCallback } from 'react';
 import './App.css';
 
 function Swatch({ params, onClick }) {
@@ -24,6 +24,8 @@ const App = () => {
 	console.log(`App rendered ${appRenderIndex} times`);
 
 	const params = useMemo(() => ({ color }), [color]);
+	const onClick = useCallback(() => {}, []);
+
 	return (
 		<div className="App">
 			<div>
@@ -35,7 +37,7 @@ const App = () => {
 				</button>
 			</div>
 			<div>
-				<MemoedSwatch params={params} onClick={() => {}} />
+				<MemoedSwatch params={params} onClick={onClick} />
 			</div>
 		</div>
 	);

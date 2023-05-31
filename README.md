@@ -21,4 +21,14 @@ Remember: Rerenders are not necessarily bad in React because it uses a VDOM that
 
 ### 2. `useMemo`
 
-We say `memo` deals with primitive values; when dealing with objects and arrays for memoization we use `useMemo`.
+We saw `memo` deals with primitive values; when dealing with objects and arrays for memoization we use `useMemo`.
+
+### 3. `useCallback`
+
+Just as `useMemo` deals with objects and arrays, `useCallback` deals with functions.
+
+## Summary:
+
+1. React memo is not memoization in the traditional sense. It looks at previous props and rerenders if they have changed.
+2. `useMemo` and `useCallback` are around referential integrity.
+3. Rerendering in React is not a bad thing. React was built for that.
