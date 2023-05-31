@@ -18,3 +18,7 @@ Use React.memo when you are running the same props over and over again to reduce
 The state is bound to each instance of the component.
 
 Remember: Rerenders are not necessarily bad in React because it uses a VDOM that changes the DOM only when necessary. Avoid premature optimization.
+
+### 2. `useMemo`
+
+We say `memo` deals with primitive values; when dealing with objects and arrays for memoization we use `useMemo`.

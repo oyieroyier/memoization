@@ -1,15 +1,15 @@
-import { useState, memo } from 'react';
+import { useState, memo, useMemo } from 'react';
 import './App.css';
 
-function Swatch({ color }) {
-	console.log(`Swatch rendered ${color}`);
+function Swatch({ params, onClick }) {
+	console.log(`Swatch rendered ${params.color}`);
 	return (
 		<div
 			style={{
 				margin: 2,
 				width: 75,
 				height: 75,
-				backgroundColor: color,
+				backgroundColor: params.color,
 			}}
 		></div>
 	);
@@ -22,6 +22,8 @@ const App = () => {
 	const [color, setColor] = useState('red');
 
 	console.log(`App rendered ${appRenderIndex} times`);
+
+	const params = useMemo(() => ({ color }), [color]);
 	return (
 		<div className="App">
 			<div>
@@ -33,8 +35,7 @@ const App = () => {
 				</button>
 			</div>
 			<div>
-				<MemoedSwatch color={color} />
-				<MemoedSwatch color={color === 'red' ? 'blue' : 'red'} />
+				<MemoedSwatch params={params} onClick={() => {}} />
 			</div>
 		</div>
 	);
